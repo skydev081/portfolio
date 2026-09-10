@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #f4f5fb;
+  --foreground: #0d1224;
+  --surface: #ffffff;
+  --line: #d8dbec;
+  --muted: #4a5069;
+  --accent: #0c9c7d;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0d1224;
+  --foreground: #ffffff;
+  --surface: #101123;
+  --line: #2a2e5a;
+  --muted: #d3d8e8;
+  --accent: #16f2b3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 #sticky-card-1 {
@@ -35,6 +49,10 @@
   --index: 4;
 }
 
+#sticky-card-5 {
+  --index: 5;
+}
+
 .sticky-card {
   top: calc(var(--index) * 4rem);
 }
@@ -43,4 +61,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 300ms ease, color 300ms ease;
 }

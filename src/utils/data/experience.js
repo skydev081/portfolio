@@ -1,20 +1,32 @@
 export const experiences = [
   {
     id: 1,
-    title: 'Front-end Developer',
-    company: "RealSys IT Solutions",
-    duration: "(Mar 2017 - Nov 2023)"
+    title: "Full-Stack / Platform Engineer",
+    company: "GrowLikePetals · Freelance · Remote",
+    duration: "(2025 — Present)",
   },
   {
     id: 2,
-    title: "FullStack Developer",
-    company: "Webteractive",
-    duration: "(Jul 2014 - Oct 2016)"
+    title: "Frontend Engineer",
+    company: "Qatent (Questel) · Paris, France · Remote",
+    duration: "(2022 — 2024)",
   },
   {
     id: 3,
-    title: "Self Employed",
-    company: "Code and build something in everyday.",
-    duration: "(Jan 2014 - Present)"
-  }
-]
+    title: "Frontend Developer",
+    company: "Archeo · Italy · Remote · Contract",
+    duration: "(Contract)",
+  },
+  {
+    id: 4,
+    title: "Frontend Developer",
+    company: "Ajustev · Colombia · Remote",
+    duration: "(2019 — 2022)",
+  },
+  {
+    id: 5,
+    title: "Software Developer",
+    company: "Highnix · Singapore · Remote",
+    duration: "(2018 — 2019)",
+  },
+];

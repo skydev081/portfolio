@@ -16,7 +16,7 @@ function Experience() {
   return (
     <div
       id="experience"
-      className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
+      className="relative z-50 border-t my-12 lg:my-24 border-line"
     >
       <Image
         suppressHydrationWarning={true}
@@ -52,7 +52,7 @@ function Experience() {
                   key={experience.id}
                   identifier={`experience-${experience.id}`}
                 >
-                  <div className="p-3 relative">
+                  <div className="p-3 relative text-foreground">
                     <Image
                       src="/blur-23.svg"
                       alt="Hero"
@@ -62,7 +62,7 @@ function Experience() {
                       suppressHydrationWarning={true}
                     />
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#16f2b3]">
+                      <p className="text-xs sm:text-sm text-accent">
                         {experience.duration}
                       </p>
                     </div>

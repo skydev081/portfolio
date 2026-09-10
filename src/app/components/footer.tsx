@@ -5,7 +5,7 @@ import { IoStar } from "react-icons/io5";
 
 function Footer() {
   return (
-    <div className="relative border-t bg-[#0d1224] border-[#353951] text-white">
+    <div className="relative border-t bg-surface border-line text-foreground">
       <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-6 lg:py-10">
         <div className="flex justify-center -z-40">
           <div className="absolute top-0 h-[1px] w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
@@ -16,24 +16,24 @@ function Footer() {
             <Link
               target="_blank"
               href="#"
-              className="text-[#16f2b3]"
+              className="text-accent"
             >
-              Marjon
+              Marjon D. Mozo
             </Link>
           </p>
           <div className="flex items-center gap-5">
             <Link
               target="_blank"
-              href="https://github.com/marjon56/portfolio"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              href="https://github.com/skydev081/portfolio"
+              className="flex items-center gap-2 uppercase hover:text-accent"
             >
               <IoStar />
               <span>Star</span>
             </Link>
             <Link
               target="_blank"
-              href="https://github.com/marjon56/portfolio/fork"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              href="https://github.com/skydev081/portfolio/fork"
+              className="flex items-center gap-2 uppercase hover:text-accent"
             >
               <CgGitFork />
               <span>Fork</span>
