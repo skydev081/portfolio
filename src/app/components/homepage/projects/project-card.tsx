@@ -1,12 +1,18 @@
-// @flow strict
+"use client";
 
-import * as React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
+import { FiExternalLink } from "react-icons/fi";
 
 interface Project {
   name: string;
   tools: string[];
   role: string;
   description: string;
+  code?: string;
+  demo?: string;
+  image?: string;
 }
 
 interface ProjectCardProps {
@@ -14,66 +20,76 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const hasDemo = Boolean(project.demo);
+  const hasCode = Boolean(project.code);
+
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
-      <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-      </div>
-      <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
-        <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
+    <article className="overflow-hidden rounded-xl border border-line bg-surface shadow-[0_0_30px_0_rgba(0,0,0,0.12)] transition-all duration-300 hover:border-violet-500/40">
+      {project.image && (
+        <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-[#0d1224]">
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            className="object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
+            sizes="(max-width: 768px) 100vw, 42rem"
+          />
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
-          {project.name}
-        </p>
-      </div>
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-        <code className="font-mono text-xs md:text-sm lg:text-base">
-          <div className="blink">
-            <span className="mr-2 text-pink-500">const</span>
-            <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{"{"}</span>
-          </div>
+      )}
+
+      <div className="flex flex-col gap-4 p-5 sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-            <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-300">{project.name}</span>
-            <span className="text-gray-400">{`',`}</span>
+            <p className="mb-1 text-xs font-medium uppercase tracking-wider text-accent">
+              {project.role}
+            </p>
+            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+              {project.name}
+            </h3>
           </div>
 
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">tools:</span>
-            <span className="text-gray-400">{` ['`}</span>
-            {project.tools.map((tag, i) => (
-              <React.Fragment key={i}>
-                <span className="text-amber-300">{tag}</span>
-                {project.tools.length - 1 !== i && (
-                  <span className="text-gray-400">{`', '`}</span>
-                )}
-              </React.Fragment>
-            ))}
-            <span className="text-gray-400">{"],"}</span>
+          <div className="flex items-center gap-2">
+            {hasDemo && (
+              <Link
+                href={project.demo!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              >
+                <FiExternalLink size={14} />
+                Live site
+              </Link>
+            )}
+            {hasCode && (
+              <Link
+                href={project.code!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              >
+                <BsGithub size={14} />
+                GitHub
+              </Link>
+            )}
           </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{" " + project.description}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div>
-            <span className="text-gray-400">{`};`}</span>
-          </div>
-        </code>
+        </div>
+
+        <p className="text-sm leading-relaxed text-muted sm:text-base">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {project.tools.map((tool) => (
+            <span
+              key={tool}
+              className="rounded-md border border-line bg-background px-2.5 py-1 text-xs text-muted"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

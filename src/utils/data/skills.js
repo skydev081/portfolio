@@ -3,14 +3,18 @@ export const skillsData = [
   "CSS",
   "Javascript",
   "Typescript",
+  "Python",
   "PHP",
   "React",
   "Next JS",
   "Vue",
   "Nuxt JS",
+  "Node JS",
+  "FastAPI",
   "Tailwind",
   "PostgreSQL",
   "MySQL",
+  "Supabase",
   "Git",
   "AWS",
   "Docker",
@@ -38,6 +42,8 @@ export const skillsData = [
   GCP
   Azure
   Fastify
+  FastAPI
+  Supabase
   Haxe
   Ionic
   Markdown

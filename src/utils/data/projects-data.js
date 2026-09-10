@@ -3,7 +3,7 @@ export const projectsData = [
     id: 1,
     name: "GrowLikePetals",
     description:
-      "Multi-tenant SaaS for independent alcohol, convenience, and vape retailers. One Next.js platform serving custom-domain storefronts, a super-admin operations portal, and a marketing site on a shared PostgreSQL schema. I designed host-based multi-tenant storefronts (Auth.js, Stripe, Prisma), built merchant lifecycle tooling (CRM, onboarding, Merchant 360), regulated-retail controls, dual-control payouts, POS catalog sync, and staff RBAC with step-up authentication.",
+      "Multi-tenant SaaS platform for independent alcohol, convenience, and vape retailers. One Next.js codebase powers custom-domain storefronts, a merchant operations portal, and a marketing site on a shared PostgreSQL schema. I owned host-based tenancy, Stripe billing, regulated-retail compliance (license gates, age verification, jurisdiction rules), dual-control payouts, POS catalog sync, and staff RBAC with step-up authentication.",
     tools: [
       "TypeScript",
       "Next.js",
@@ -19,13 +19,14 @@ export const projectsData = [
     ],
     role: "Full-Stack / Platform Engineer",
     code: "",
-    demo: "",
+    demo: "https://growlikepetals.com/",
+    image: "/image/projects/growlikepetals.png",
   },
   {
     id: 2,
-    name: "Qatent (Questel)",
+    name: "Qatent",
     description:
-      "AI patent-drafting web app used by IP professionals to turn disclosures, claims, prior art, and figures into PCT-style drafts. I built the Vue 3 / Quasar frontend including project workspace, claims editor, description tree, and figure management. Draft generation streamed over WebSockets into a structured editor. I also shipped PDF/DOCX/PPTX document pipelines, localization in six languages, and Questel SSO with subscription/credit gates.",
+      "AI-augmented patent drafting product (a Questel company) used by IP professionals to turn disclosures, claims, prior art, and figures into PCT-style drafts. I built the Vue 3 / Quasar frontend: project workspace, claims and description editors, WebSocket-streamed draft generation, PDF/DOCX/PPTX import pipelines, six-language localization, and Questel SSO with subscription and credit gates.",
     tools: [
       "Vue 3",
       "Quasar",
@@ -40,13 +41,14 @@ export const projectsData = [
     ],
     role: "Frontend Engineer",
     code: "",
-    demo: "",
+    demo: "https://qatent.com/",
+    image: "/image/projects/qatent.png",
   },
   {
     id: 3,
     name: "Archeo",
     description:
-      "Production React SPA for archaeological cataloging used by excavation teams and museums. I built a React 18 cataloging platform for finds, storage, deposits, movements, bibliography, and archives against Italian ICCD 4.00 standards. Features included interactive WebGIS with OpenLayers, 2D/3D galleries with Three.js, Excel bulk import with column mapping, and granular RBAC so teams can collaborate without overwriting verified data.",
+      "Production React SPA for archaeological data management used by excavation teams and museums in Italy. I delivered ICCD 4.00-compliant cataloging for finds, deposits, movements, and archives; interactive WebGIS with OpenLayers; 2D/3D galleries with Three.js; Excel bulk import with GIS provenance matching; and granular RBAC so teams can collaborate without overwriting verified records.",
     tools: [
       "React 18",
       "React Router 6",
@@ -61,23 +63,25 @@ export const projectsData = [
     ],
     role: "Frontend Developer",
     code: "",
-    demo: "",
+    demo: "https://archeo.loreb.it/",
+    image: "/image/projects/archeo.png",
   },
   {
     id: 4,
     name: "Ajustev",
     description:
-      "Vehicle inspection management for field teams and administrators. I led frontend delivery of a React Native mobile app and a Vue.js / Laravel admin portal for inspection reports. Implemented image and video upload for reports, real-time chat with Socket.IO between mobile users and the admin team, and a clean web portal with data visualization so staff can review inspection data across devices.",
+      "Vehicle identification and legality platform for field inspection teams and administrators in Colombia. I led frontend delivery of a React Native mobile app and a Vue.js / Laravel admin portal for inspection reports, media uploads, real-time Socket.IO chat between inspectors and staff, and dashboards for reviewing inspection data across devices.",
     tools: ["React Native", "Vue.js", "Laravel", "Socket.IO", "MySQL"],
     role: "Frontend Developer",
     code: "",
-    demo: "",
+    demo: "https://www.ajustev.co/",
+    image: "/image/projects/ajustev.png",
   },
   {
     id: 5,
     name: "Highnix",
     description:
-      "Cloud and on-premises ERP / accounting system for Singapore SMEs (InvoiceNow-ready). I extended a PHP/MySQL ERP covering sales, purchasing, inventory, GL, fixed assets, and financial reporting. Implemented PEPPOL / InvoiceNow e-invoicing, IRAS-aligned GST reporting, a Slim REST API for external posting, Singapore document flows (PayNow QR, digital signatures), plus 2FA and role-based access for production use.",
+      "Cloud and on-premises ERP / accounting system for Singapore SMEs, including InvoiceNow and Peppol readiness. I extended PHP/MySQL modules for sales, purchasing, inventory, GL, and financial reporting; implemented PEPPOL / InvoiceNow e-invoicing and IRAS-aligned GST reporting; exposed a Slim REST API; and added PayNow QR invoices, digital delivery notes, 2FA, and role-based access.",
     tools: [
       "PHP",
       "MySQL",
@@ -89,7 +93,25 @@ export const projectsData = [
     ],
     role: "Software Developer",
     code: "",
+    demo: "https://www.highnix.com/",
+    image: "/image/projects/highnix.png",
+  },
+  {
+    id: 6,
+    name: "About Marjon — RAG Chatbot",
+    description:
+      "Personal RAG chatbot that answers questions about my background, skills, and experience. Built with Python and Streamlit on top of LangChain, Chroma for vector retrieval, and the OpenAI API for grounded responses. Visitors can ask natural-language questions and receive answers retrieved from my professional profile documents instead of generic LLM output.",
+    tools: [
+      "Python",
+      "Streamlit",
+      "LangChain",
+      "Chroma",
+      "OpenAI API",
+    ],
+    role: "Full-Stack Developer",
+    code: "https://github.com/skydev081/simple-rag-chatbot",
     demo: "",
+    image: "/image/projects/rag-chatbot.png",
   },
 ];
 
