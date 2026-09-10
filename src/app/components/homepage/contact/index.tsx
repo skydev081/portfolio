@@ -2,7 +2,7 @@
 import { personalData } from '@/utils/data/personal-data';
 import Link from 'next/link';
 import { CiLocationOn } from "react-icons/ci";
-import { IoLogoGithub, IoMdCall } from "react-icons/io";
+import { IoLogoGithub } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactForm from './contact-form';
 
